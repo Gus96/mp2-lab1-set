@@ -71,18 +71,41 @@ void TBitField::ClrBit(const int n) // очистить бит
 
 int TBitField::GetBit(const int n) const // получить значение бита
 {
-  return 0;
+  //return 0;
+	int ind = GetMemIndex(n);
+	TELEM mask = GetMemMask(n);
+	if (pMem[ind] & mask == 0)
+		return 0;
+	else 
+		return 1;
 }
 
 // битовые операции
 
 TBitField& TBitField::operator=(const TBitField &bf) // присваивание
 {
+
 }
 
 int TBitField::operator==(const TBitField &bf) const // сравнение
 {
-  return 0;
+  //return 0;
+	//сравниваем длины
+	if (BitLen != bf.BitLen)
+		return 0;
+	//сравниваем все ячейки кроме последней
+	for (int i = 0; i < MemLen-1; i++)
+	{
+		if (pMem[i] != bf.pMem[i])
+			return 0;
+	}
+	//побитово сравниваем
+	for (int i = (MemLen - 1) * 32; i < BitLen; i++)
+	{
+		if (GetBit(i) != bf.GetBit(i))
+			return 0;
+	}
+	return 1;
 }
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение
@@ -91,9 +114,20 @@ int TBitField::operator!=(const TBitField &bf) const // сравнение
 }
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"
-{
-}
+{//соединяем элементы
+	int len;
+	if (BitLen > bf.BitLen)
+		len = BitLen;
+	else
+		len = bf.BitLen;
 
+	TBitField tmp (len);
+	for (int i = 0; i < MemLen; i ++)
+		tmp.pMem[i] = pMem[i];
+	for (int i = 0; i < bf.MemLen; i++)
+		tmp.pMem[i] |= bf.pMem[i];
+	return tmp;
+}
 TBitField TBitField::operator&(const TBitField &bf) // операция "и"
 {
 }

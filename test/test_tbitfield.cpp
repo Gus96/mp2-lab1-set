@@ -2,16 +2,16 @@
 
 #include <gtest.h>
 
-TEST(TBitField, can_create_bitfield_with_positive_length)
+TEST(TBitField, can_create_bitfield_with_positive_length)//первый параметр это то что тестируем(можем создать битовое поле положительной длины)
 {
-  ASSERT_NO_THROW(TBitField bf(3));
-}
+  ASSERT_NO_THROW(TBitField bf(3));//создаем битовое поле (длина 3)
+}//assert no throw - исключений нет
 
-TEST(TBitField, can_get_length)
-{
+TEST(TBitField, can_get_length)//могу ли я посмотреть длину
+{//get lenght 
   TBitField bf(3);
-
-  EXPECT_EQ(3, bf.GetLength());
+  
+  EXPECT_EQ(3, bf.GetLength());//тест пройден если эти два числа совпали
 }
 
 TEST(TBitField, new_bitfield_is_set_to_zero)
