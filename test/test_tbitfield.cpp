@@ -3,7 +3,7 @@
 #include <gtest.h>
 
 TEST(TBitField, can_create_bitfield_with_positive_length)//первый параметр это то что тестируем(можем создать битовое поле положительной длины)
-{
+{//assert no throw не ожидает исключения
   ASSERT_NO_THROW(TBitField bf(3));//создаем битовое поле (длина 3)
 }//assert no throw - исключений нет
 

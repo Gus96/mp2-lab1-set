@@ -12,7 +12,7 @@
 
 using namespace std;
 
-typedef unsigned int TELEM;
+typedef unsigned int TELEM;//макрос, для положительности
 
 class TBitField
 {
