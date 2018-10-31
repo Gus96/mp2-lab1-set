@@ -170,7 +170,6 @@ TBitField TBitField::operator~(void) // отрицание
 }
 
 // ввод/вывод
-//////////////////////////
 istream &operator>>(istream &istr, TBitField &bf) // ввод
 {
 	char symbol;
@@ -192,7 +191,7 @@ istream &operator>>(istream &istr, TBitField &bf) // ввод
 }
 
 ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
-{///////////////////////
+{
 	for (int i = 0; i < bf.BitLen; i++)
 	{
 		if (bf.GetBit(i) == 0)
