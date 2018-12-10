@@ -78,7 +78,7 @@ TSet TSet::operator+(const TSet &s) // объединение
 	//return *this;
 	TSet temp(BitField|s.BitField);
 	return temp;
-}/////////////////////////////////////////
+}//////////////////////////////////////////
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
@@ -101,7 +101,7 @@ TSet TSet::operator*(const TSet &s) // пересечение
 	//return *this;
 	TSet temp (BitField & s.BitField);
 	return temp;
-}/////////////////////////////////////
+}//////////////////////////////////////
 
 TSet TSet::operator~(void) // дополнение
 {
