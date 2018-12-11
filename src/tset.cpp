@@ -78,7 +78,7 @@ TSet TSet::operator+(const TSet &s) // объединение
 	//return *this;
 	TSet temp(BitField|s.BitField);
 	return temp;
-}/////////////////////////////////////////
+}//////////////////////////////////////////
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
@@ -101,7 +101,7 @@ TSet TSet::operator*(const TSet &s) // пересечение
 	//return *this;
 	TSet temp (BitField & s.BitField);
 	return temp;
-}/////////////////////////////////////
+}//////////////////////////////////////
 
 TSet TSet::operator~(void) // дополнение
 {
@@ -123,8 +123,8 @@ istream &operator>>(istream &istr, TSet &s) // ввод
 
 ostream& operator<<(ostream &ostr, const TSet &s) // вывод
 {
-	for (int i = 0; i< s.MaxPower; i++)
+	for (int i = 0; i < s.MaxPower; i++)
 		if (s.IsMember(i))
-			ostr << i;
+			ostr << " " << i;
 	return ostr;
 }

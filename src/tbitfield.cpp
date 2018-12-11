@@ -199,5 +199,5 @@ ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
 		else
 			ostr << 1;
 	}
-	return ostr;
+	return ostr;/////
 }
